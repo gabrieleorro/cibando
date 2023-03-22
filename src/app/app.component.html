@@ -1,18 +1,24 @@
 <header>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-dark bg-red">
     <div class="container-fluid">
+      <img src="../assets/images/icona-cibando.png" class="icona-cibando align-self-center">
       <a class="navbar-brand" href="#">Cibando</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
+          <!-- <mat-icon class="align-self-center">home</mat-icon> -->
+          <fa-icon [icon]="faHotel" class="align-self-center nav-icon"></fa-icon>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
+          <!-- <mat-icon class="align-self-center">restaurant_menu</mat-icon> -->
+          <fa-icon [icon]="faReceipt" class="align-self-center nav-icon"></fa-icon>
           <li class="nav-item">
             <a class="nav-link" href="#">Ricette</a>
           </li>
+          <fa-icon [icon]="faAddressCard" class="align-self-center nav-icon"></fa-icon>
           <li class="nav-item">
             <a class="nav-link" href="#">Contatti</a>
           </li>
@@ -21,6 +27,21 @@
     </div>
   </nav>
 </header>
+<!-- Direttive strutturali -->
+<ngb-carousel *ngIf="images.length > 1">
+  <ng-template ngbSlide *ngFor="let image of images">
+    <div class="picsum-img-wrapper">
+      <img [src]="percorso + image.id + '.jpg'" [alt]="image.label" />
+    </div>
+    <div class="carousel-caption">
+      <h3>{{image.label}}</h3>
+    </div>
+  </ng-template>
+</ngb-carousel>
+
+<div *ngIf="images.length == 1" class="single-image">
+  <img [src]="percorso + images[0].id + '.jpg'" [alt]="images[0].label" />
+</div>
 
 <div id="main-container">
   <div class="container-titolo">
@@ -28,5 +49,13 @@
     <p class="paragrafo">Ecco un testo dentro al paragrafo</p>
   </div>
 </div>
+
+<!-- <div id="contenitore-switch" [ngSwitch]="colore" class="d-flex justify-content-center">
+  <div *ngSwitchCase="'green'" [style]="'background-color: ' + colore">Questo div compare solo se il colore è VERDE</div>
+  <div *ngSwitchCase="'red'" [style]="'background-color: ' + colore">Questo div compare solo se il colore è ROSSO</div>
+  <div *ngSwitchCase="'blue'" [style]="'background-color: ' + colore">Questo div compare solo se il colore è BLU</div>
+  <div *ngSwitchDefault style="background-color: black;">Questo div compare solo se no color found</div>
+</div> -->
+
 
 <router-outlet></router-outlet>
