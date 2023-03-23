@@ -16,22 +16,16 @@ export class AppComponent {
   faReceipt = faReceipt;
   faHotel = faHotel;
 
-  images = [
-    {
-      id: 1,
-      label: 'Spaghetti al sugo di gamberi'
-    },
-    {
-      id: 2,
-      label: 'Tagliata di manzo'
-    },
-    {
-      id: 3,
-      label: 'Tiramisù alle fragole'
-    },
-  ];
-
-  percorso = "../assets/images/carousel-";
-
   colore = "green";
+
+  coloreScelto = '';
+  cambiaBG(){
+    this.colore = this.coloreScelto;
+  }
+
+  evidenziato = false;
+  onEvidenziazione(){
+    this.evidenziato = !this.evidenziato;
+  }
+
 }

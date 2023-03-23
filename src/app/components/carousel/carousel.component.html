@@ -1,0 +1,32 @@
+<!-- Direttive strutturali -->
+<ngb-carousel *ngIf="images.length > 1; else noSlide" [interval]="5000">
+  <ng-template ngbSlide *ngFor="let image of images; let i = index">
+    <div class="picsum-img-wrapper">
+      <img [src]="percorso + image.id + '.jpg'" [alt]="image.label" />
+    </div>
+    <div class="carousel-caption">
+      <h3>{{image.label}}</h3>
+      <div *ngIf="i == images.length - 1">
+        <h2>ULTIMA FOTO</h2>
+      </div>
+    </div>
+  </ng-template>
+</ngb-carousel>
+
+<!-- <div *ngIf="images.length == 1" class="single-image">
+  <img [src]="percorso + images[0].id + '.jpg'" [alt]="images[0].label" />
+</div> -->
+
+<ng-template #noSlide>
+  <div class="single-image">
+    <img [src]="percorso + images[0].id + '.jpg'" [alt]="images[0].label" />
+  </div>
+</ng-template>
+
+<!-- <ng-template #finito>
+  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi.</p>
+  <div>
+    ULTIMA FOTO
+  </div>
+</ng-template> -->
+

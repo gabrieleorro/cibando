@@ -37,5 +37,10 @@ html, body { height: 100%; }
   margin-left: 5px;
 }
 
+.testoEvidenziato {
+  background-color: yellow;
+  width: 100%;
+}
+
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
