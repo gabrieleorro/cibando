@@ -20,6 +20,7 @@
 <ng-template #noSlide>
   <div class="single-image">
     <img [src]="percorso + images[0].id + '.jpg'" [alt]="images[0].label" />
+    <!-- <div *ngIf="images.length == 1" class="picsum-img-wrapper" style="background: url('{{percorso + images[0].id}}.jpg'); background-size: cover; height: 550px; width: 100%;"></div> -->
   </div>
 </ng-template>
 
