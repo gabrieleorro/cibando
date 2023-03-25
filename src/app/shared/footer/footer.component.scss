@@ -2,3 +2,10 @@
   position: relative;
   background-color: #8e210b;
 }
+.container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
+  max-width: 100%!important;
+}
+.text-muted {
+  --bs-text-opacity: 1;
+  color: white!important;
+}
