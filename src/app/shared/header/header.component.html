@@ -1,8 +1,8 @@
 <header>
   <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-dark bg-red">
     <div class="container-fluid">
-      <img src="../assets/images/icona-cibando.png" class="icona-cibando align-self-center">
-      <a class="navbar-brand" href="#">Cibando</a>
+      <img src="../../../assets/images/icona-cibando.png" class="icona-cibando align-self-center" routerLink="home">
+      <a class="navbar-brand" routerLink="home">Cibando</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -11,16 +11,16 @@
           <!-- <mat-icon class="align-self-center">home</mat-icon> -->
           <fa-icon [icon]="faHotel" class="align-self-center nav-icon"></fa-icon>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link" aria-current="page" routerLink="home">Home</a>
           </li>
           <!-- <mat-icon class="align-self-center">restaurant_menu</mat-icon> -->
           <fa-icon [icon]="faReceipt" class="align-self-center nav-icon"></fa-icon>
           <li class="nav-item">
-            <a class="nav-link" href="#">Ricette</a>
+            <a class="nav-link" routerLink="ricette">Ricette</a>
           </li>
           <fa-icon [icon]="faAddressCard" class="align-self-center nav-icon"></fa-icon>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contatti</a>
+            <a class="nav-link" >Contatti</a>
           </li>
         </ul>
       </div>
