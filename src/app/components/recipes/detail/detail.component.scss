@@ -1,0 +1,32 @@
+.container-ricetta {
+
+  .ricetta-image {
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .ricetta-title {
+    margin-left: 20px;
+    margin-top: 40px;
+  }
+
+  .ricetta-description {
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: justify;
+  }
+
+  .ricetta-difficulty {
+    margin-top: 10px;
+    margin-left: 20px;
+    font-weight: bold;
+  }
+
+  .ricetta-date {
+    text-align: end;
+    margin-right: 20px;
+  }
+}

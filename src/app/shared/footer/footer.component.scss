@@ -1,6 +1,8 @@
+@import "../../../styles/colors.scss";
+
 .container-footer {
   /* position: relative; */
-  background-color: #8e210b;
+  background-color: $primary-color-1;
   /* display: block; */
   float: left;
   width: 100%;
@@ -13,5 +15,5 @@
 }
 .text-muted {
   --bs-text-opacity: 1;
-  color: white!important;
+  color: $secondary-color-1!important;
 }

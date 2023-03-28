@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
+@import "./styles/colors.scss";
 
 body {
   margin: 0;
@@ -8,7 +9,7 @@ body {
 }
 
 .bg-red, header {
-  background-color: #8e210b!important;
+  background-color: $primary-color-1!important;
 }
 
 nav {
@@ -25,7 +26,7 @@ h2 {
   font-size: 35px!important;
   // font-family: 'Homemade Apple', cursive;
   font-family: 'PT Mono', monospace!important;
-  color: #8e210b!important;
+  color: $primary-color-1!important;
 }
 
 .icona-cibando
@@ -41,12 +42,12 @@ h2 {
   h3 {
     font-family: "Homemade Apple", cursive;
     font-size: 40px;
-    text-shadow: black 3px 3px 3px;
+    text-shadow: $secondary-color-5 3px 3px 3px;
   }
 }
 
 .nav-icon {
-  color: white;
+  color: $secondary-color-1;
   font-size: 120%;
   margin-left: 5px;
 }

@@ -1,3 +1,5 @@
+@import "../../../styles/colors.scss";
+
 .card-container {
   display: block;
   float: left;
@@ -23,7 +25,7 @@
     .card-title {
       font-weight: bold;
       font-size: 16px;
-      color: #8e210b;
+      color: $primary-color-1;
       margin: 2px;
     }
 
@@ -33,7 +35,7 @@
     }
 
     a.btn.btn-primary {
-      background: #8e210b;
+      background: $primary-color-1;
       border: none;
       margin: auto;
       padding: 8px 35px;

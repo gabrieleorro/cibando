@@ -14,4 +14,9 @@ export class RecipeService {
     return of (RECIPES);
   }
 
+  getRecipe(id: number): Observable<Recipe> {
+    const recipe = RECIPES.find(ricetta => ricetta._id === id);
+    return of (recipe);
+  }
+
 }

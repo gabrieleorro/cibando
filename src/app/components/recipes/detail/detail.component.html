@@ -1,0 +1,17 @@
+<div class="container-ricetta">
+  <div class="ricetta-image" [ngStyle]="{'background-image': 'url(' + ricetta.image + ')'}"></div>
+  <div class="container-ricetta-info">
+    <div class="ricetta-title">
+      <h2>{{ricetta.title}}</h2>
+    </div>
+    <div class="ricetta-description">
+      <p>{{ricetta.description}}</p>
+    </div>
+    <div class="ricetta-difficulty">
+      <p>Difficoltà: <br>{{ricetta.difficulty}} stelle</p>
+    </div>
+    <div class="ricetta-date">
+      <p>Ricetta pubblicata in data {{ricetta.date}}</p>
+    </div>
+  </div>
+</div>
