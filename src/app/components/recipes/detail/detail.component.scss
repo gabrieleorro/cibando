@@ -23,10 +23,22 @@
     margin-top: 10px;
     margin-left: 20px;
     font-weight: bold;
+
+    img.difficolta {
+      width: 130px;
+      float: left;
+    }
   }
 
   .ricetta-date {
     text-align: end;
     margin-right: 20px;
   }
+}
+
+div#no-ricetta {
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

@@ -1,4 +1,4 @@
-<div class="container-ricetta">
+<div class="container-ricetta" *ngIf="ricetta; else noRicetta">
   <div class="ricetta-image" [ngStyle]="{'background-image': 'url(' + ricetta.image + ')'}"></div>
   <div class="container-ricetta-info">
     <div class="ricetta-title">
@@ -8,10 +8,16 @@
       <p>{{ricetta.description}}</p>
     </div>
     <div class="ricetta-difficulty">
-      <p>Difficoltà: <br>{{ricetta.difficulty}} stelle</p>
+      <p>Difficoltà:</p>
+      <img [src]="percorsoStelline + ricetta.difficulty + '.png'" alt="" class="difficolta">
     </div>
     <div class="ricetta-date">
-      <p>Ricetta pubblicata in data {{ricetta.date}}</p>
+      <p>Ricetta pubblicata in data {{ricetta.date | date: 'longDate'}}</p>
     </div>
   </div>
 </div>
+<ng-template #noRicetta>
+  <div id="no-ricetta">
+    <h2>Spiacenti, ma la ricetta richiesta non è più disponibile.</h2>
+  </div>
+</ng-template>

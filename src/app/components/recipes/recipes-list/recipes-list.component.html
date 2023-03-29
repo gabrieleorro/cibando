@@ -1,4 +1,9 @@
 <div id="main-container">
   <h2>Le nostre ricette</h2>
-  <app-recipe-card [recipes]="ricette"></app-recipe-card> <!-- è figlio di recipes -->
+  <div id="msg">
+    <div id="titolo-ricetta" *ngIf="titoloRicetta">
+      {{titoloRicetta}}
+    </div>
+  </div>
+  <app-recipe-card [recipes]="ricette" (messaggio)="riceviTitolo($event)"></app-recipe-card> <!-- è figlio di recipes -->
 </div>
