@@ -1,0 +1,53 @@
+@import "../../../../styles/colors.scss";
+
+.container-form {
+  background-color: $secondary-color-1;
+
+  input.ng-invalid.ng-touched {
+    border: 1px solid red;
+  }
+  input.ng-valid.ng-touched {
+    border: 1px solid green;
+  }
+
+  .icone-form {
+    color: black;
+    font-size: 120%;
+    margin-left: 5px;
+    height: 45px;
+    margin-right: 20px;
+  }
+
+  .card {
+    --bs-card-border-width: 2px!important;
+    border-radius: 15px!important;
+  }
+
+  .check {
+    height: 50px;
+    width: 70%;
+    flex-direction: column;
+
+    p {
+      margin-top: 4px;
+    }
+  }
+
+}
+
+p.help.is-danger {
+  margin-top: -13px;
+  color: rgb(209, 30, 30);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.sfondo {
+  position: relative;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 0 15px 15px 0;
+}
+

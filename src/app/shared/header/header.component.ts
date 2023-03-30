@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { faAddressCard, faHotel, faReceipt } from '@fortawesome/free-solid-svg-icons';
+import { faAddressCard, faHotel, faReceipt, faUserLock } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-header',
@@ -11,5 +11,6 @@ export class HeaderComponent {
   faAddressCard = faAddressCard;
   faReceipt = faReceipt;
   faHotel = faHotel;
+  faUserLock = faUserLock;
 
 }

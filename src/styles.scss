@@ -46,6 +46,12 @@ h2 {
   }
 }
 
+.btn-primary {
+  background-color: $primary-color-1!important;
+  font-weight: 700!important;
+  border: none!important;
+}
+
 .nav-icon {
   color: $secondary-color-1;
   font-size: 120%;
