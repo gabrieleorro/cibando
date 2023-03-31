@@ -52,6 +52,12 @@ h2 {
   border: none!important;
 }
 
+.p-password, .p-inputtext {
+  width: 100%!important;
+  float: right;
+  border-radius: 0.375rem!important;
+}
+
 .nav-icon {
   color: $secondary-color-1;
   font-size: 120%;
