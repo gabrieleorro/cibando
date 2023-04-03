@@ -10,7 +10,19 @@
     <h2>Le ultime ricette</h2>
     <app-recipe-card [recipes]="ricette"></app-recipe-card>
   </div>
-
 </div>
+
+<ng-template [ngIf]="name">
+  <div id="container-utente">
+    <div id="dati-utente">
+      <h2>Grazie {{name}} per esserti registrato, ecco i tuoi dati:</h2>
+      <ul>
+        <li>Nome: {{name}}</li>
+        <li>Email: {{email}}</li>
+      </ul>
+      <button class="btn btn-primary btn-lg" (click)="closeModal()">Chiudi</button>
+    </div>
+  </div>
+</ng-template>
 
 

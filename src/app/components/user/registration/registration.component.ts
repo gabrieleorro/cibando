@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { faUserTie, faAt, faKey } from '@fortawesome/free-solid-svg-icons';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { CustomValidator } from '../customValidator';
+import { UserService } from 'src/app/services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registration',
@@ -14,6 +16,11 @@ export class RegistrationComponent {
   chiocciola = faAt;
   chiave = faKey;
 
+  constructor(
+    private userService: UserService,
+    private router: Router
+  ) {}
+
   form = new FormGroup({
     name: new FormControl('', Validators.required),
     email: new FormControl('', [Validators.required, Validators.email]),
@@ -25,7 +32,14 @@ export class RegistrationComponent {
   );
 
   onSubmit() {
-    console.log(this.form.value);
+    // console.log(this.form.value);
+    const user = {
+      name: this.form.value.name,
+      email: this.form.value.email
+    }
+
+    this.userService.datiUtente.next(user);
+    this.router.navigate(['home']);
   }
 
 }
