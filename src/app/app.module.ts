@@ -10,6 +10,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PasswordModule } from 'primeng/password';
 import { DividerModule } from 'primeng/divider';
+import { PaginatorModule } from 'primeng/paginator';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { RecipesComponent } from './components/recipes/recipes.component';
 import { HomeComponent } from './components/home/home.component';
@@ -46,6 +47,7 @@ import { RegistrationComponent } from './components/user/registration/registrati
     ReactiveFormsModule,
     PasswordModule,
     DividerModule,
+    PaginatorModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -69,5 +69,17 @@ h2 {
   width: 100%;
 }
 
+.p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+  background: #8e210bd4!important;
+  border-color: #8e210b!important;
+  color: white!important;
+  font-size: 20px;
+}
+.p-link:focus {
+  outline: 0 none;
+  outline-offset: 0;
+  box-shadow: 0 0 0 0.2rem #8e210b!important;
+}
+
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
