@@ -5,3 +5,8 @@
   // padding-top: 2px;
   // margin-right: 5px;
 }
+.navbar-expand-lg .navbar-collapse {
+  display: flex !important;
+  flex-basis: auto;
+  justify-content: flex-end;
+}
