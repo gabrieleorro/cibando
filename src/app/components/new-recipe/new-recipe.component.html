@@ -73,15 +73,16 @@
       <div class="col-8">
         <div class="testo-riepilogo">
           <ul>
-            <li>Titolo: {{title}}</li>
-            <li>Descrizione: {{description}}</li>
-            <li>Difficoltà: {{difficulty}}</li>
-            <li>Pubblicato: {{published}}</li>
+            <li>{{ricettaInserita.title}}</li>
+            <li>{{ricettaInserita.description | slice: 0:200}}</li>
+            <li>{{ricettaInserita.difficulty}}</li>
+            <li>{{ricettaInserita.published}}</li>
+            <li>{{ricettaInserita.createdAt | date}}</li>
           </ul>
         </div>
       </div>
       <div class="col-4">
-        <img [src]="image" class="immagine-ricetta">
+        <img [src]="ricettaInserita.image" class="immagine-ricetta">
       </div>
     </div>
   </div>

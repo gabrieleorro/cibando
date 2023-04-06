@@ -16,6 +16,7 @@ export class RegistrationComponent {
   faUserTie = faUserTie;
   chiocciola = faAt;
   chiave = faKey;
+  utenteInserito: any;
 
   constructor(
     private userService: UserService,
@@ -35,13 +36,19 @@ export class RegistrationComponent {
 
   onSubmit() {
     // console.log(this.form.value);
-    const user = {
-      name: this.form.value.name,
-      email: this.form.value.email
-    }
+    const user = this.form.value;
 
-    this.userService.datiUtente.next(user);
-    this.router.navigate(['home']);
+    this.userService.insertUser(user).subscribe({
+      next: (res) => {
+        console.log('Utente inserito', res);
+        this.utenteInserito = res;
+        this.userService.datiUtente.next(user);
+        this.router.navigate(['home']);
+      },
+      error: (err) => {
+        console.log(err);
+      }
+    })
   }
 
   open(content: any, titolo?: string) {
