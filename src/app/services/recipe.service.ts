@@ -15,8 +15,12 @@ export class RecipeService {
 
   constructor(private http: HttpClient) { }
 
-  getRecipes(): Observable<Recipe[]> {
-    // return of (RECIPES);
+  // getRecipes(): Observable<Recipe[]> {
+  //   // return of (RECIPES);
+  //   return this.http.get<Recipe[]>(`${this.apiBaseUrl}/`)
+  // }
+
+  getRecipes() {
     return this.http.get<Recipe[]>(`${this.apiBaseUrl}/`)
   }
 
