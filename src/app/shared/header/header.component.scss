@@ -10,3 +10,18 @@
   flex-basis: auto;
   justify-content: flex-end;
 }
+
+span.name {
+  margin-left: 6px;
+}
+
+li.nav-item.user {
+  margin-left: 80px;
+  color: white;
+  border: 1px solid white;
+  border-radius: 8px;
+}
+
+a.nav-link {
+  display: inline-block;
+}

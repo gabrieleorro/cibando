@@ -3,11 +3,13 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { RecipeService } from 'src/app/services/recipe.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-new-recipe',
   templateUrl: './new-recipe.component.html',
-  styleUrls: ['./new-recipe.component.scss']
+  styleUrls: ['./new-recipe.component.scss'],
+  providers: [MessageService]
 })
 export class NewRecipeComponent {
 
@@ -23,6 +25,7 @@ export class NewRecipeComponent {
     private recipeService: RecipeService,
     private modal: NgbModal,
     private router: Router,
+    private messageService: MessageService,
   ) {  }
 
   form = new FormGroup({
@@ -43,6 +46,7 @@ export class NewRecipeComponent {
       next: (res) => {
         console.log('Recipe added ', res);
         this.ricettaInserita = res;
+        this.messageService.add({severity: 'success', summary: 'Completato!', detail: 'Ricetta inserita correttamente!'});
       },
       error: (err) => {
         console.log(err)

@@ -1,7 +1,5 @@
 @import "../../../styles/colors.scss";
 
-
-
 .card-container {
   display: block;
   float: left;
@@ -43,6 +41,11 @@
       border: none;
       margin: auto;
       padding: 8px 35px;
+    }
+
+    .delete {
+      background: #441111!important;
+      margin-left: 5px!important;
     }
   }
 }

@@ -2,13 +2,16 @@ import { Component, EventEmitter, Input, Output, OnInit, OnDestroy } from '@angu
 import { Recipe } from 'src/app/models/recipe.model';
 import { RecipeService } from 'src/app/services/recipe.service';
 import { Observable, map, take } from 'rxjs';
+import { MessageService } from 'primeng/api';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-recipe-card',
   templateUrl: './recipe-card.component.html',
-  styleUrls: ['./recipe-card.component.scss']
+  styleUrls: ['./recipe-card.component.scss'],
+  providers: [MessageService]
 })
-export class RecipeCardComponent implements OnDestroy {
+export class RecipeCardComponent implements OnInit, OnDestroy {
 
   @Input() pag: string;
   @Output() messaggio = new EventEmitter();
@@ -17,13 +20,23 @@ export class RecipeCardComponent implements OnDestroy {
   ricetteTotali: number;
   page = 1;
   ricettePerPagina = 4;
-
-  recipes$: Observable<Recipe[]> = this.recipeService.getRecipes().pipe(
-    map(response => this.ricette = response),
-  );
   ricette: Recipe[];
+  ruolo: any;
 
-  constructor(private recipeService: RecipeService) {}
+  recipes$ = this.recipeService.getRecipes().pipe(
+    map(response => {
+      this.ricette = response;
+      if(response) {
+        this.messageService.add({severity: 'success', summary:'Completato', detail: 'Ricette caricate correttamente', life: 3000})
+      }
+    }),
+  );
+
+  constructor(
+    private recipeService: RecipeService,
+    private messageService: MessageService,
+    private userService: UserService,
+  ) {}
 
   ngOnDestroy(): void {
     console.log('utente uscito dal componente')
@@ -38,9 +51,18 @@ export class RecipeCardComponent implements OnDestroy {
     this.page = event.page;
   }
 
-  // ngOnInit(): void {
-  //   this.prendiRicette();
-  // }
+  ngOnInit(): void {
+    if(JSON.parse(localStorage.getItem('user')) != null) {
+      this.userService.userRole.subscribe({
+        next: (res) => {
+          this.ruolo = res;
+        },
+        error: (err) => {
+          console.log(err);
+        }
+      })
+    }
+  }
 
   // prendiRicette() {
   //   this.recipeService.getRecipes().pipe(take(1)).subscribe({
