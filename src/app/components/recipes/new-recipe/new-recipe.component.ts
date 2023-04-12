@@ -4,6 +4,7 @@ import { RecipeService } from 'src/app/services/recipe.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
+import * as ClassicEditorBuild from '@ckeditor/ckeditor5-build-classic';
 
 @Component({
   selector: 'app-new-recipe',
@@ -35,6 +36,47 @@ export class NewRecipeComponent {
     published: new FormControl(false),
     difficulty: new FormControl('1', [Validators.required, Validators.min(1), Validators.max(5)]),
   });
+
+  Editor = ClassicEditorBuild;
+
+  editorConfig = {
+    toolbar: {
+      items: [
+        'bold',
+        'italic',
+        'link',
+        'bulletedList',
+        'numberedList',
+        '|',
+        'indent',
+        'outdent',
+        '|',
+        'heading',
+        '|',
+        'codeBlock',
+        'blockQuote',
+        'insertTable',
+        'undo',
+        'redo',
+      ]
+    },
+    image: {
+      toolbar: [
+        'imageStyle:full',
+        'imageStyle:side',
+        '|',
+        'imageTextAlternative'
+      ]
+    },
+    table: {
+        contentToolbar: [
+            'tableColumn',
+            'tableRow',
+            'mergeTableCells'
+        ]
+    },
+    height: 300,
+};
 
   // ngOnInit(): void {
   //   this.prendiDatiRicetta();

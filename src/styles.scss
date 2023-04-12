@@ -81,5 +81,25 @@ h2 {
   box-shadow: 0 0 0 0.2rem #8e210b!important;
 }
 
+.descrizione-ricetta .ck-editor__editable {
+  min-height: 200px!important;
+  max-height: 200px!important;
+  max-width: 440px!important;
+}
+
+.note .ck-editor__editable {
+  min-height: 200px!important;
+  max-height: 200px!important;
+  max-width: 390px!important;
+}
+
+.note .ck-sticky-panel__content {
+  max-width: 390px!important;
+}
+
+.descrizione-ricetta .ck-sticky-panel__content {
+  max-width: 440px!important;
+}
+
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';

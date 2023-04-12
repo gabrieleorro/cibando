@@ -13,6 +13,7 @@ import { PasswordModule } from 'primeng/password';
 import { DividerModule } from 'primeng/divider';
 import { PaginatorModule } from 'primeng/paginator';
 import { ToastModule } from 'primeng/toast';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { RecipesComponent } from './components/recipes/recipes.component';
 import { HomeComponent } from './components/home/home.component';
@@ -26,6 +27,7 @@ import { NewRecipeComponent } from './components/recipes/new-recipe/new-recipe.c
 import { ChangeColorDirective } from './directives/change-color.directive';
 import { EsempioCombineComponent } from './components/esempio-combine/esempio-combine.component';
 import { LoginComponent } from './components/user/login/login.component';
+import { ProfileComponent } from './components/user/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,8 @@ import { LoginComponent } from './components/user/login/login.component';
     NewRecipeComponent,
     ChangeColorDirective,
     EsempioCombineComponent,
-    LoginComponent
+    LoginComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -58,6 +61,7 @@ import { LoginComponent } from './components/user/login/login.component';
     PaginatorModule,
     HttpClientModule,
     ToastModule,
+    CKEditorModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

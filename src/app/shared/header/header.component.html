@@ -8,7 +8,6 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-          <!-- <mat-icon class="align-self-center">home</mat-icon> -->
           <fa-icon [icon]="faHotel" class="align-self-center nav-icon"></fa-icon>
           <li class="nav-item">
             <a class="nav-link" aria-current="page" routerLink="home">Home</a>
@@ -33,7 +32,8 @@
           <li class="nav-item user" *ngIf="authService.isLogged()">
             <fa-icon [icon]="faUserLock" class="align-self-center nav-icon"></fa-icon>
             <span class="name">Ciao {{user.name}}</span>
-            <a class="nav-link" (click)="logout()"> - Esci</a>
+            <a class="nav-link" routerLink="profilo"> - PROFILO</a>
+            <a class="nav-link" (click)="logout()">- ESCI</a>
           </li>
         </ul>
       </div>
