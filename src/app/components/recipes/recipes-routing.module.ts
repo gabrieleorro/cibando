@@ -7,7 +7,6 @@ import { RecipesListComponent } from './recipes-list/recipes-list.component';
 import { DetailComponent } from './detail/detail.component';
 import { NewRecipeComponent } from './new-recipe/new-recipe.component';
 
-
 const routes: Routes = [
   { path: '', component: RecipesComponent, children: [
     { path: 'dettaglio/:title/:_id', component: DetailComponent},
