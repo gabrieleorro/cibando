@@ -35,6 +35,12 @@
             <a class="nav-link" routerLink="/utente/profilo"> - PROFILO</a>
             <a class="nav-link" (click)="logout()">- ESCI</a>
           </li>
+          <li class="nav-item">
+            <input type="search" class="campo-cerca" [(ngModel)]="ricerca" placeholder="Cerca..." (keyup.enter)="risultato()" />
+            <button class="bottone-cerca" (click)="risultato()">
+              <fa-icon [icon]="cerca" class="align-self-center nav-icon"></fa-icon>
+            </button>
+          </li>
         </ul>
       </div>
     </div>

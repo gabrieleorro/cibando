@@ -4,6 +4,8 @@ import { RecipeService } from 'src/app/services/recipe.service';
 import { Observable, map, take } from 'rxjs';
 import { MessageService } from 'primeng/api';
 import { UserService } from 'src/app/services/user.service';
+import { AuthService } from 'src/app/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-recipe-card',
@@ -22,12 +24,18 @@ export class RecipeCardComponent implements OnInit, OnDestroy {
   ricettePerPagina = 4;
   ricette: Recipe[];
   ruolo: any;
+  ricercato: string;
+
 
   recipes$ = this.recipeService.getRecipes().pipe(
     map(response => {
-      this.ricette = response;
-      if(response) {
-        this.messageService.add({severity: 'success', summary:'Completato', detail: 'Ricette caricate correttamente', life: 3000})
+      if(this.pag === 'ricerca') {
+        this.ricercaRicette();
+      } else {
+        this.ricette = response;
+        if(response) {
+          this.messageService.add({severity: 'success', summary:'Completato', detail: 'Ricette caricate correttamente', life: 3000})
+        }
       }
     }),
   );
@@ -36,6 +44,8 @@ export class RecipeCardComponent implements OnInit, OnDestroy {
     private recipeService: RecipeService,
     private messageService: MessageService,
     private userService: UserService,
+    public authService: AuthService,
+    private router: Router,
   ) {}
 
   ngOnDestroy(): void {
@@ -62,6 +72,30 @@ export class RecipeCardComponent implements OnInit, OnDestroy {
         }
       })
     }
+  }
+
+  ricercaRicette() {
+    this.recipeService.testoCercato.subscribe({
+      next: (res: string) => {
+        this.ricercato = res;
+        if(this.ricercato) {
+          this.recipeService.findRecipes(this.ricercato).subscribe({
+            next: (res) => {
+              this.ricette = res;
+              if(res) {
+                this.messageService.add({severity: 'success', summary:'Completato', detail: 'Ricette cercate correttamente.', life: 3000})
+              }
+            },
+            error: (err) => {
+              this.messageService.add({severity: 'error', summary:'Fallito!', detail: 'Ricette non trovate.', life: 6000})
+            }
+          })
+        }
+      },
+      error: (err) => {
+        console.error(err);
+      }
+    });
   }
 
   // prendiRicette() {

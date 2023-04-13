@@ -12,6 +12,7 @@ import { RecipesComponent } from './recipes.component';
 import { DetailComponent } from './detail/detail.component';
 import { NewRecipeComponent } from './new-recipe/new-recipe.component';
 import { RecipeCardComponent } from 'src/app/shared/recipe-card/recipe-card.component';
+import { ResultComponent } from './result/result.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { RecipeCardComponent } from 'src/app/shared/recipe-card/recipe-card.comp
     RecipesListComponent,
     DetailComponent,
     NewRecipeComponent,
+    ResultComponent,
   ],
   imports: [
     CommonModule,
