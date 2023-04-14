@@ -5,5 +5,7 @@
       {{titoloRicetta}}
     </div>
   </div>
-  <app-recipe-card (messaggio)="riceviTitolo($event)"></app-recipe-card> <!-- è figlio di recipes -->
+  <app-recipe-card (messaggio)="riceviTitolo($event)">
+    <!-- <div>Ecco il contenuto passato dal padre</div> -->
+  </app-recipe-card> <!-- è figlio di recipes -->
 </div>

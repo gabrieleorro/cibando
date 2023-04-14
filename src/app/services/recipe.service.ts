@@ -35,8 +35,8 @@ export class RecipeService {
     return this.http.post<any>(`${this.apiBaseUrl}/`, recipe);
   }
 
-  findRecipes(testo: string): Observable<any> {
-    return this.http.get<any>(`${this.apiBaseUrl}/cerca/${testo}`);
+  findRecipes(testo: string): Observable<Recipe[]> {
+    return this.http.get<Recipe[]>(`${this.apiBaseUrl}/cerca/${testo}`);
   }
 
 }
